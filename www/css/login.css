@@ -1,0 +1,57 @@
+.login-form {
+  text-align: center;
+  width: 80%;
+  margin: 60px auto 0;
+}
+
+input[type=email], input[type=password] {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  outline: none;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.login-button {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.forgot-password {
+  display: block;
+  margin: 8px auto 0 auto;
+  font-size: 14px;
+}
+.form-field{
+  width:96%;
+  margin: 2%;
+  text-align:center;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+.label-field{
+  margin-left: 2%;
+}
+.recibo-half{
+  width:50%;
+  text-align: center;
+}
+.settings-header {
+  font-weight: 500;
+  font-size: 14px;
+  opacity: 0.4;
+  padding: 10px 0 0px 10px;
+  margin-bottom: -4px;
+}
+.settings-list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.resumen-list{
+  margin:10px;
+}
+.resumen-head{
+  font-weight: bold;
+  color:#006780;
+}

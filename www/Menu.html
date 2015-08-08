@@ -1,0 +1,29 @@
+<ons-page>
+      <ons-toolbar>
+        <div class="left"><ons-back-button>Atrás</ons-back-button></div>
+        <div class="center">Menu</div>
+        <div class="right"><ons-toolbar-button>Salir</ons-toolbar-button></div>
+      </ons-toolbar>
+
+      <ons-list>
+        <ons-list-item modifier="chevron" ng-click="myNavigator.pushPage('Recibo-Consumo.html');">
+          <ons-icon icon="fa-comment" size="20px"></ons-icon>
+          Cotizar
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" ng-click="myNavigator.pushPage('Cliente.html');">
+          <ons-icon icon="fa-credit-card" size="20px"></ons-icon>
+          Cliente
+        </ons-list-item>
+
+        <ons-list-header>Preferencias</ons-list-header>
+
+        <ons-list-item modifier="chevron" ng-click="sincronizar();">
+          <ons-icon icon="fa-film" size="20px"></ons-icon>
+          Sincronizar
+          <span class="list-item-note">
+            <span class="notification">10</span>
+          </span>
+        </ons-list-item>
+      </ons-list>
+</ons-page>

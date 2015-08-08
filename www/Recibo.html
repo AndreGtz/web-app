@@ -1,0 +1,60 @@
+<ons-page>
+  <ons-toolbar>
+        <div class="left"><ons-back-button>Atrás</ons-back-button></div>
+        <div class="center">Recibo</div>
+  </ons-toolbar>
+  <div style="width:50%;height:60%;float:left;bg-color:blue;">
+    <img src="res/cfe.png" style="padding-top:15px;padding-bottom:60px;"/>
+    <img src="res/medidor.png"/>
+  </div>
+  <div class="formarea">
+    <div class="settings-header">Promedio</div>
+    <ons-list modifier="inset"  class="settings-list">
+        <div class="form-row">
+            <ons-list-item modifier="inset">
+              <input type="number" class="text-input text-input--underbar form-field" placeholder="Promedio Diario en kWh" value="">
+            </ons-list-item>
+        </div>
+    </ons-list>
+    <div class="settings-header">Facturación</div>
+    <ons-list modifier="inset"  class="settings-list">
+        <div class="form-row">
+          <ons-list-item>
+            <input type="number" class="text-input text-input--underbar form-field" placeholder="1er Escalón" value="">
+          </ons-list-item>
+        </div>
+
+        <div class="form-row">
+          <input type="number" class="text-input text-input--underbar form-field" placeholder="2do Escalón" value="">
+        </div>
+
+        <div class="form-row">
+          <input type="number" class="text-input text-input--underbar form-field" placeholder="Excedente" value="">
+        </div>
+
+        <div class="form-row">
+          <input type="number" class="text-input text-input--underbar form-field" placeholder="Cargo Fijo" value="">
+        </div>
+
+    </ons-list>
+    <div class="settings-header">Importe</div>
+    <ons-list modifier="inset"  class="settings-list">
+        <div class="form-row">
+          <ons-list-item>
+            <input type="number" class="text-input text-input--underbar form-field" placeholder="DAP" value="">
+          </ons-list-item>
+        </div>
+    </ons-list>
+    <div class="settings-header">Bimestral</div>
+    <ons-list modifier="inset"  class="settings-list">
+      <ons-list-item>
+        Bimestral
+          <ons-switch modifier="list-item" checked></ons-switch>
+      </ons-list-item>
+    </ons-list>
+    <br/>
+    <div class="vspc form-row">
+      <ons-button modifier="large--cta" class="login-button" ng-click="myNavigator.pushPage('Contrato.html');">Continuar</ons-button>
+    </div>
+  </div>
+</ons-page>

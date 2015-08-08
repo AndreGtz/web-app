@@ -1,0 +1,36 @@
+<ons-page>
+        <ons-toolbar>
+          <div class="left"><ons-back-button>Atrás</ons-back-button></div>
+          <div class="center">Clientes</div>
+          <div class="right">
+            <ons-toolbar-button ng-click="myNavigator.pushPage('NuevoCliente.html');">
+              <ons-icon icon="ion-plus" fixed-width="false" style="vertical-align: -4px;"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+        </ons-toolbar>
+
+        <div class="navigation-bar">
+          <div class="navigation-bar__center">
+
+            <input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Search">
+
+          </div>
+        </div>
+
+        <ons-list class="person-list" ng-repeat="char in ['A', 'B', 'C', 'D', 'E']">
+          <ons-list-header class="person-list-header">{{char}}</ons-list-header>
+          <ons-list-item class="person" modifier="tappable" ng-repeat="i in [1,2,3,4,5]" ng-click="myNavigator.pushPage('Resumen.html');">
+            <ons-row>
+              <ons-col width="40px">
+              <img src="images/profile-image-0{{i}}.png" class="person-image">
+              </ons-col>
+              <ons-col class="person-name">
+                Jesus Torres
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+        </ons-list>
+
+
+
+      </ons-page>

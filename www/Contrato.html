@@ -1,0 +1,47 @@
+<ons-page>
+  <ons-toolbar>
+        <div class="left"><ons-back-button>Atrás</ons-back-button></div>
+        <div class="center">Contrato</div>
+  </ons-toolbar>
+  <div class="formarea">
+        <div class="form-row">
+          <span class="label-field">Fecha de Pago</span>
+          <input type="date" class="text-input text-input--underbar form-field" value="">
+        </div>
+
+        <div class="form-row">
+          <span class="label-field">Fecha de Entrega</span>
+          <input type="date" class="text-input text-input--underbar form-field" value="">
+        </div>
+
+        <div class="form-row">
+          <span class="label-field">Fecha de Producción</span>
+          <input type="date" class="text-input text-input--underbar form-field" value="">
+        </div>
+
+        <div class="form-row">
+          <span class="label-field">Tiempo de Instalación<span>
+          <input type="number" class="text-input text-input--underbar form-field" placeholder="Semanas" value="">
+        </div>
+
+        <div class="form-row">
+          <span class="label-field">Anticipo</span>
+          <input type="number" class="text-input text-input--underbar form-field" value="">
+        </div>
+        <div class="form-row">
+          <span class="label-field">Ahorro buscado</span>
+          <input type="number" class="text-input text-input--underbar form-field" placeholder="%" value="">
+        </div>
+        <div class="form-row">
+          <label class="checkbox checkbox--list-item form-field">
+            <input type="checkbox">
+            <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+            Ahorro ISR?
+          </label>
+        </div>
+        <br/>
+        <div class="vspc form-row">
+          <ons-button modifier="large--cta" class="login-button" ng-click="myNavigator.pushPage('Resumen.html');">Continuar</ons-button>
+        </div>
+  </div>
+</ons-page>
