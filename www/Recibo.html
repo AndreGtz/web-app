@@ -3,58 +3,69 @@
         <div class="left"><ons-back-button>Atrás</ons-back-button></div>
         <div class="center">Recibo</div>
   </ons-toolbar>
-  <div style="width:50%;height:60%;float:left;bg-color:blue;">
-    <img src="res/cfe.png" style="padding-top:15px;padding-bottom:60px;"/>
-    <img src="res/medidor.png"/>
-  </div>
-  <div class="formarea">
-    <div class="settings-header">Promedio</div>
-    <ons-list modifier="inset"  class="settings-list">
-        <div class="form-row">
-            <ons-list-item modifier="inset">
-              <input type="number" class="text-input text-input--underbar form-field" placeholder="Promedio Diario en kWh" value="">
+
+  <form name="recibo.addForm" class="right" ng-app="my-app"  ng-controller="ReciboController as recibo" ng-submit="myNavigator.pushPage('Contrato.html');">
+    <div id="form">
+      <div style="width:50%;height:100%;float:left;bg-color:blue;">
+        <img src="res/cfe.png" style="padding-top:15px;padding-bottom:60px;"/>
+        <img src="res/medidor.png"/>
+      </div>
+
+      <div class="settings-header">Promedio</div>
+      <ons-list modifier="inset"  class="settings-list">
+          <div class="form-row">
+              <ons-list-item modifier="inset">
+                <input type="number" min="0" class="text-input--underbar width-full number-field" placeholder="Promedio Diario en kWh" value="" ng-model="recibo.recibo.promedioDiarioKwh" required>
+              </ons-list-item>
+          </div>
+      </ons-list>
+      <div class="settings-header">Facturación</div>
+      <ons-list modifier="inset"  class="settings-list">
+          <div class="form-row">
+            <ons-list-item>
+              <input type="number" min="0" class="text-input--underbar width-full number-field" placeholder="1er Escalón" value="" ng-model="recibo.recibo.primerEscalon" required>
             </ons-list-item>
-        </div>
-    </ons-list>
-    <div class="settings-header">Facturación</div>
-    <ons-list modifier="inset"  class="settings-list">
-        <div class="form-row">
-          <ons-list-item>
-            <input type="number" class="text-input text-input--underbar form-field" placeholder="1er Escalón" value="">
-          </ons-list-item>
-        </div>
+          </div>
 
-        <div class="form-row">
-          <input type="number" class="text-input text-input--underbar form-field" placeholder="2do Escalón" value="">
-        </div>
+          <div class="form-row">
+            <ons-list-item>
+              <input type="number" min="0" class="text-input--underbar width-full number-field" placeholder="2do Escalón" value="" ng-model="recibo.recibo.segundoEscalon" required>
+            </ons-list-item>
+          </div>
 
-        <div class="form-row">
-          <input type="number" class="text-input text-input--underbar form-field" placeholder="Excedente" value="">
-        </div>
+          <div class="form-row">
+            <ons-list-item>
+              <input type="number" min="0" class="text-input--underbar width-full number-field" placeholder="Excedente" value="" ng-model="recibo.recibo.excedente" required>
+            </ons-list-item>
+          </div>
 
-        <div class="form-row">
-          <input type="number" class="text-input text-input--underbar form-field" placeholder="Cargo Fijo" value="">
-        </div>
+          <div class="form-row">
+            <ons-list-item>
+              <input type="number" min="0" class="text-input--underbar width-full number-field" placeholder="Cargo Fijo" value="" ng-model="recibo.recibo.cargoFijo" required>
+            </ons-list-item>
+          </div>
 
-    </ons-list>
-    <div class="settings-header">Importe</div>
-    <ons-list modifier="inset"  class="settings-list">
-        <div class="form-row">
-          <ons-list-item>
-            <input type="number" class="text-input text-input--underbar form-field" placeholder="DAP" value="">
-          </ons-list-item>
-        </div>
-    </ons-list>
-    <div class="settings-header">Bimestral</div>
-    <ons-list modifier="inset"  class="settings-list">
-      <ons-list-item>
-        Bimestral
-          <ons-switch modifier="list-item" checked></ons-switch>
-      </ons-list-item>
-    </ons-list>
+      </ons-list>
+      <div class="settings-header">Importe</div>
+      <ons-list modifier="inset"  class="settings-list">
+          <div class="form-row">
+            <ons-list-item>
+              <input type="number" min="0" class="text-input--underbar width-full number-field" placeholder="DAP" value="" ng-model="recibo.recibo.dap" required>
+            </ons-list-item>
+          </div>
+      </ons-list>
+      <div class="settings-header">Bimestral</div>
+      <ons-list modifier="inset"  class="settings-list">
+        <ons-list-item>
+          Bimestral
+            <ons-switch modifier="list-item" ng-model="recibo.recibo.bimestral"></ons-switch>
+        </ons-list-item>
+      </ons-list>
+    </div>
     <br/>
     <div class="vspc form-row">
-      <ons-button modifier="large--cta" class="login-button" ng-click="myNavigator.pushPage('Contrato.html');">Continuar</ons-button>
+      <button type="submit"class="button button--large--cta">Continuar</button>
     </div>
-  </div>
+    <pre>{{recibo.recibo|json}}</pre>
+  </form>
 </ons-page>

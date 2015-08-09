@@ -14,8 +14,8 @@ Usuario.prototype = {
   setEmail: function(email){
     this.email = email;
   },
-  validate: function(email,pass){
-    if(email == "colpac64@gmail.com" && pass=="der"){
+  validate: function(){
+    if(this.email == "colpac64@gmail.com" && this.pass=="der"){
       return true;
     }
     else {
@@ -24,11 +24,17 @@ Usuario.prototype = {
   }
 };
 
+
+
 angular.module('my-app').service('Usuario',Usuario);
 
-angular.module('my-app').controller('UserController',['Usuario',function(usuario){
-  this.usuario = new Usuario();
-  this.validate = function(usuario){
-    return usuario.validate(usuario.email,usuario.pass);
+angular.module('my-app').controller('UserController',['Usuario','$scope',function(usuario,$scope){
+  var vm = this;
+  vm.usuario = new Usuario();
+  vm.login = function(){
+
+    if(vm.usuario.validate()||true){
+      $scope.myNavigator.pushPage('Menu.html');
+    }
   };
 }]);

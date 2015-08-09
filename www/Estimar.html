@@ -3,15 +3,15 @@
         <div class="left"><ons-back-button>Atrás</ons-back-button></div>
         <div class="center">Datos del Lugar</div>
   </ons-toolbar>
-  <div class="formarea">
+  <form class="formarea" name="EstimarForm" ng-submit="myNavigator.pushPage('Contrato.html');">
         <div class="form-row">
-          <input type="number" class="text-input text-input--underbar form-field" placeholder="Area m2" value="">
+          <input type="number" min="0" class="text-input--underbar width-full" placeholder="Area m2" value="" required="">
         </div>
 
         <div class="form-row">
-          <input type="number" class="text-input text-input--underbar form-field" placeholder="Habitantes" value="">
+          <input type="number" min="0" class="text-input--underbar width-full" placeholder="Habitantes" value="" required="">
         </div>
-
+        <br/><br/>
         <div class="form-row">
           <ons-list>
 
@@ -53,7 +53,7 @@
         </div>
         <br/>
         <div class="vspc form-row">
-          <ons-button modifier="large--cta" class="login-button" ng-click="myNavigator.pushPage('Contrato.html');">Continuar</ons-button>
+          <button class="button button--large--cta">Continuar</button>
         </div>
-  </div>
+  </form>
 </ons-page>

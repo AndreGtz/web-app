@@ -1,56 +1,15 @@
-function Recibo(bimestral,primerEscalon,segundoEscalon,excedente,cargoFijo,dap,promedioDiarioKwh){
-  this.bimestral = bimestral||false;
-  this.primerEscalon = primerEscalon||0;
-  this.segundoEscalon = segundoEscalon||0;
-  this.excedente = excedente||0;
-  this.cargoFijo = cargoFijo||0;
-  this.dap = dap||0;
-  this.promedioDiarioKwh = promedioDiarioKwh||0;
+
+function Recibo(){
+  this.bimestral = true;
+  this.primerEscalon = "";
+  this.segundoEscalon = "";
+  this.excedente = "";
+  this.cargoFijo = "";
+  this.dap = "";
+  this.promedioDiarioKwh = "";
 }
 
 Recibo.prototype = {
-  setBimestral: function(bimestral){
-    this.bimestral= bimestral;
-  },
-  setPrimerEscalon: function(primerEscalon){
-    this.primerEscalon = primerEscalon;
-  },
-  setSegundoEscalon: function(segundoEscalon){
-    this.segundoEscalon = segundoEscalon;
-  },
-  setExcedente: function(excedente){
-    this.excedente = excedente;
-  },
-  setCargoFijo: function(cargoFijo){
-    this.cargoFijo = cargoFijo;
-  },
-  setDap: function(dap){
-    this.dap = dap;
-  },
-  setPromedioDiarioKwh: function(promedioDiarioKwh){
-    this.promedioDiarioKwh = promedioDiarioKwh;
-  },
-  isBimestral: function(){
-    return this.bimestral;
-  },
-  getPrimerEscalon: function(){
-    return this.primerEscalon;
-  },
-  getSegundoEscalon: function(){
-    return this.segundoEscalon;
-  },
-  getExcedente: function(){
-    return this.excedente;
-  },
-  getCargoFijo: function(){
-    return this.cargoFijo;
-  },
-  getDap: function(){
-    return this.dap;
-  },
-  getPromedioDiarioKwh: function(){
-    return this.promedioDiarioKwh;
-  },
   getSubTotal: function(){
     return this.primerEscalon+this.segundoEscalon+this.excedente+this.cargoFijo;
   },
@@ -61,10 +20,18 @@ Recibo.prototype = {
     return getSubTotal()+getIva()+this.dap;
   },
   getCostoKwhPagado: function(){
-    var dias = isBimestral()?60:30;
+    var dias = this.bimestral?60:30;
     return getTotal()/dias/this.promedioDiarioKwh;
   },
   getConsumoKwhBimestral: function(){
-    return getPromedioDiarioKwh()*60;
+    return this.PromedioDiarioKwh*60;
   }
 };
+
+angular.module('my-app').service('Recibo',Recibo);
+
+angular.module('my-app').controller('ReciboController',['Recibo','$scope',function(recibo,$scope){
+  var vm = this;
+  vm.recibo = new Recibo();
+
+}]);

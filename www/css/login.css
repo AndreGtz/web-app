@@ -13,6 +13,12 @@ input[type=email], input[type=password] {
   padding-bottom: 24px;
 }
 
+input[type=text], input[type=number] {
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .login-button {
   width: 100%;
   margin: 0 auto;
@@ -54,4 +60,19 @@ input[type=email], input[type=password] {
 .resumen-head{
   font-weight: bold;
   color:#006780;
+}
+.formarea {
+  width: 90%;
+  margin: 50px auto 0px auto;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.number-field{
+  text-align: right;
+}
+.vspc {
+  margin-top: 20px;
 }

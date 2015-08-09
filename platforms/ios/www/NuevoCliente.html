@@ -3,31 +3,31 @@
         <div class="left"><ons-back-button>Atrás</ons-back-button></div>
         <div class="center">Nuevo Cliente</div>
   </ons-toolbar>
-  <div class="formarea">
+  <form class="formarea" name="NuevoClienteForm" ng-submit="">
         <div class="form-row">
-          <input type="text" class="text-input text-input--underbar form-field" placeholder="Nombre(s)" value="">
+          <input type="text" class="text-input--underbar width-full" placeholder="Nombre(s)" value="" required="">
         </div>
         <div class="form-row">
-          <input type="text" class="text-input text-input--underbar form-field" placeholder="Apellidos" value="">
+          <input type="text" class="text-input--underbar width-full" placeholder="Apellidos" value="" required="">
         </div>
         <div class="form-row">
-          <input type="text" class="text-input text-input--underbar form-field" placeholder="Calle" value="">
+          <input type="text" class="text-input--underbar width-full" placeholder="Calle" value="" required="">
         </div>
         <div class="form-row">
-          <input type="text" class="text-input text-input--underbar form-field" placeholder="Num. Int." value="">
+          <input type="text" class="text-input--underbar width-full" placeholder="Num. Int." value="">
         </div>
         <div class="form-row">
-          <input type="text" class="text-input text-input--underbar form-field" placeholder="Num. Ext." value="">
+          <input type="text" class="text-input--underbar width-full" placeholder="Num. Ext." value="">
         </div>
         <div class="form-row">
-          <input type="text" class="text-input text-input--underbar form-field" placeholder="Colonia" value="">
+          <input type="text" class="text-input--underbar width-full" placeholder="Colonia" value="" required="">
         </div>
         <div class="form-row">
-          <input type="text" class="text-input text-input--underbar form-field" placeholder="Ciudad" value="">
+          <input type="text" class="text-input--underbar width-full" placeholder="Ciudad" value="" required="">
         </div>
         <br/>
         <div class="vspc form-row">
-          <ons-button modifier="large--cta" class="login-button" ng-click="">Guardar</ons-button>
+          <button class="button button--large--cta">Guardar</button>
         </div>
-  </div>
+  </form>
 </ons-page>

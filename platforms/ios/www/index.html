@@ -18,30 +18,32 @@
         };
       })
     </script>
-    <script src="js/model/User.js" charset="utf-8"></script>
+
 
     <!--<script src="js/app.js"></script>-->
   </head>
   <body>
-    <ons-navigator title="Navigator" var="myNavigator">
+    <ons-navigator title="Navigator" var="myNavigator" ng-app="my-app">
       <ons-page>
         <ons-toolbar>
           <div class="center">Cotizador</div>
           <div class="right"><ons-toolbar-button>Cerrar</ons-toolbar-button></div>
         </ons-toolbar>
-      <!-- ng-click="myNavigator.pushPage('Menu.html');" -->
         <div class="login-form" ng-controller="UserController as user">
           <input type="email" class="text-input--underbar" placeholder="Email" value="" ng-model="user.usuario.email">
           <input type="password" class="text-input--underbar" placeholder="Contraseña" value="" ng-model="user.usuario.pass">
           <br><br>
-          <ons-button modifier="large" class="login-button" ng-click="user.validate(user.usuario)">Entrar</ons-button>
+          <ons-button modifier="large" class="login-button" ng-click="user.login()">Entrar</ons-button>
           <br><br>
           <ons-button modifier="quiet" class="forgot-password">Olvidó su contraseña?</ons-button>
           <pre>{{user.usuario | json}}</pre>
-          <pre>{{user.usuario.validate(user.usuario.email,user.usuario.pass)?'valido':'invalido'}}</pre>
+          <pre>{{user.usuario.validate()?'valido':'invalido'}}</pre>
         </div>
 
       </ons-page>
-    </ons-toolbar>
+    </ons-navigator>
+      <script type="text/javascript" src="js/model/Recibo.js"></script>
+      <script src="js/model/User.js" charset="utf-8"></script>
+
   </body>
 </html>
